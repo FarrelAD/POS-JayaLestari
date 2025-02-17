@@ -13,7 +13,7 @@
         <div class="w-64 bg-blue-900 text-white p-5 space-y-6">
             <h1 class="text-2xl font-bold">Jaya Lestari</h1>
             <nav>
-                <a href="/" class="block py-2 px-4 hover:bg-blue-700 rounded">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="block py-2 px-4 hover:bg-blue-700 rounded">Dashboard</a>
                 <div>
                     <button onclick="toggleProductDropdown()" class="block w-full text-left py-2 px-4 hover:bg-blue-700 rounded">Products</button>
                     <div id="productsDropdown" class="hidden pl-4">

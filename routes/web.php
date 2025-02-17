@@ -1,41 +1,39 @@
 <?php
 
 use App\Http\Controllers\POSController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /**
  * Home page
  */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'dashboard')
+    ->name('dashboard');
 
 /**
  * The implementation of route prefix
  * Product pages
  */
 Route::prefix('category')->group(function () {
-    Route::get('/food-beverage', function () {
-        return "Food beverage";
-    });
-    Route::get('/beauty-health', function () {
-        return "Beauty health";
-    });
-    Route::get('/home-care', function () {
-        return "Home care!";
-    });
-    Route::get('/baby-kid', function () {
-        return "Baby kid";
-    });
+    Route::get('/food-beverage', [ProductController::class, 'showFoodBeverage'])
+        ->name('food-beverage');
+    Route::get('/beauty-health', [ProductController::class, 'showBeautyHealth'])
+        ->name('beauty-health');
+    Route::get('/home-care', [ProductController::class, 'showHomeCare'])
+        ->name('home-care');
+    Route::get('/baby-kid', [ProductController::class, 'showBabyKid'])
+        ->name('baby-kid');
 });
+
 
 /**
  * The implementation of route params
  * User pages
  */
-Route::get('/user/{id}/name/{name}', function ($id, $name) {
-    return "Hello $name! You have ID $id isn't it ?";
-});
+Route::get('/users', [UserController::class, 'showAllUsers'])
+    ->name('users');
+Route::get('/user/{id}/name/{name}', [UserController::class, 'showUserDetail']);
 
 
 /**
