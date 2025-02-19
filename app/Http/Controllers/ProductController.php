@@ -3,26 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ProductController extends Controller
 {
     public function showFoodBeverage()
     {
-        return "Food beverage";
+        $response = Http::get('https://fakestoreapi.com/products');
+        return view('products.food-beverage', ['products' => $response]);
     }
 
     public function showBeautyHealth()
     {
-        return "Beauty health";
+        return view('products.beauty-health');
     }
 
     public function showHomeCare()
     {
-        return "Home care";
+        return view('products.home-care');
     }
 
     public function showBabyKid()
     {
-        return "Baby kid";
+        return view('products.baby-kid');
     }
 }
