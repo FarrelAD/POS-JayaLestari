@@ -30,9 +30,10 @@
         </nav>
     </div>
 
+
     <main class="flex-1 p-6 ml-64">
         <div class="mt-6 bg-white p-6 shadow rounded-lg">
-            <h3 class="text-lg font-semibold mb-4">Food Beverage</h3>
+            <h3 class="text-lg font-semibold mb-4">Baby Kid</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach ($products as $product)
