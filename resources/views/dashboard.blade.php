@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POS Jaya Lestari</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     @vite('resources/css/app.css')
 </head>
 
@@ -24,6 +25,7 @@
                     </div>
                 </div>
                 <a href="{{ route('users') }}" class="block py-2 px-4 hover:bg-blue-700 rounded">Users</a>
+                <a href="{{ route('pos.index') }}" class="block py-2 px-4 hover:bg-blue-700 rounded">Transactions</a>
             </nav>
         </div>
 
