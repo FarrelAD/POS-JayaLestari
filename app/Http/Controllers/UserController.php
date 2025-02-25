@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function showAllUsers()
     {
-        return view('users');
+        return view('users.users');
     }
 
     public function showUserDetail($id, $name) {
